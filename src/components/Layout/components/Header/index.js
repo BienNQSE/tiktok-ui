@@ -4,13 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleXmark, faSpinner, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import Tippy from '@tippyjs/react/headless' // thư viện tạo dropdown cho phần search result
 
+import Button from '~/components/Button'
 import styles from './Header.module.scss'
 import images from '~/assets/images'
 import { Wrapper as PopperWrapper } from '~/components/Popper'
 import AccountItem from '~/components/AccountItem'
 
 
- const cx = className.bind(styles)
+const cx = className.bind(styles)
 
 function Header() {
 
@@ -53,13 +54,20 @@ function Header() {
                             </button>
                             <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
                             
-                                <button className={cx('search-btn')}>
+                                <button  className={cx('search-btn')}>
                                     <FontAwesomeIcon  icon={faMagnifyingGlass} />
                                 </button>
                             
                         </div>
                 </Tippy>
-                <div className={cx('action')}> action button here</div>
+                <div className={cx('action')}> 
+                            <Button text >Upload</Button>
+                            <Button
+                                primary
+                            >Log in
+                            </Button>
+                            
+                </div>
             </div>
         </header>
     )
